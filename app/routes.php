@@ -187,7 +187,7 @@ return function (App $app) {
             return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
         }
     });
-    
+    //update
     $app->put('/data/updateCatatan/{id}', function (Request $request, Response $response, $args) {
         $id = $args['id'];
         $data = $request->getParsedBody();
