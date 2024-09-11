@@ -26,7 +26,7 @@ return function (App $app) {
     $app->get('/data/getAll', function (Request $request, Response $response) {
         try {
             $db = $this->get(PDO::class);
-            $sth = $db->prepare("SELECT * FROM `map-tracking` where Latitude is not null and Longitude is not null");
+            $sth = $db->prepare("SELECT * FROM `map-tracking` where latitude is not null and longitude is not null");
             $sth->execute();
             $data = $sth->fetchAll(PDO::FETCH_ASSOC);
             $response->getBody()->write(json_encode($data));
